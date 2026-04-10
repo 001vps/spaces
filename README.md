@@ -1,4 +1,8 @@
 # 在huggingface上部署Alist会秒封号 请勿使用！！！
+## 青龙被飞牛通报存在漏洞 请不要在抱脸部署
+## 已知会秒封号的镜像：
+- Alist
+- 青龙
 
 ## 演示视频：https://youtu.be/RWjwOYcc8TQ
 

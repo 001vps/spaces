@@ -3,7 +3,7 @@ FROM node:22-slim
 ENV REMOTE_FOLDER="huggingface:/openclaw"
 # 1. 基础依赖
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    wget cron curl git openssh-client build-essential python3 python3-pip \ 
+    wget cron nano procps curl git openssh-client build-essential python3 python3-pip \ 
     g++ rclone nginx make ca-certificates && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --no-cache-dir huggingface_hub --break-system-packages
@@ -15,7 +15,7 @@ RUN curl -fsSL https://code-server.dev/install.sh | sh
 RUN rclone config -h
 
 # 3. 安装 OpenClaw
-RUN npm install -g pm2 openclaw@latest --unsafe-perm 
+RUN npm install -g pm2 openclaw@2026.4.5 --unsafe-perm 
 
 # 4. 设置工作目录并拷贝脚本
 WORKDIR /app
